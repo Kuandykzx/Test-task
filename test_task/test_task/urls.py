@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-from bank.views import bank_status, bank_set
+from bank.views import bank_status, bank_set, withdraw
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'bank/status/', bank_status),
-    url(r'bank/set/', bank_set),
+    url(r'bank/status/', bank_status, name='status'),
+    url(r'bank/set/', bank_set, name='bank_set'),
+    url(r'withdraw/', withdraw, name='withdraw'),
 ]
